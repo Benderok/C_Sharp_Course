@@ -1,7 +1,18 @@
 ﻿// Напишите программу, которая принимает на вход трехзначное число
 // и на выходе показывает вторую цифру этого числа.
 
-int a = int.Parse(Console.ReadLine());
-int x = a / 10;
-int y = x % 10;
-Console.WriteLine(y);
+String SecondDigit(int number)
+{
+    Console.WriteLine(number);
+    if (number < 100 || number > 999)
+        return "Not 3 digit";
+
+    else
+        number /= 10;
+        number %= 10;
+        return $"Second digit -> {number}";
+}
+
+Console.Write("Enter number: ");
+int number = int.Parse(Console.ReadLine());
+Console.WriteLine(SecondDigit(number));
