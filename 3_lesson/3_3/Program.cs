@@ -4,22 +4,22 @@
 void Chet(int N)
 {
    int i = 0;
-   double pere;
+   double square;
    while (i < N )
    {
         i += 1;
         if (i == (N))
         {
-            pere = Math.Pow(i,2);
-            Console.Write($"{pere}");
+            square = Math.Pow(i,2);
+            Console.Write($"{square}.");
         }
         else
         {
-        pere = Math.Pow(i,2);
-        Console.Write($"{pere},");
+        square = Math.Pow(i,2);
+        Console.Write($"{square}, ");
         }
    } 
 }
-Console.WriteLine("введите ч");
+Console.WriteLine("Enter number: ");
 int chislo = int.Parse(Console.ReadLine());
 Chet(chislo);

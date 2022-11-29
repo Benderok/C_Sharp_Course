@@ -8,6 +8,7 @@ int ReadNumber(string message)
     int a = s == null ? 0 : int.Parse(s);
     return a;
 }
+
 double Distance(int ax, int ay, int bx, int by)
 {
     double result;
@@ -15,9 +16,9 @@ double Distance(int ax, int ay, int bx, int by)
     return result;
 }
 
-int ax = ReadNumber("Введите aX:");
-int ay = ReadNumber("Введите aY:");
-int bx = ReadNumber("Введите bX:");
-int by = ReadNumber("Введите bY:");
+int ax = ReadNumber("Enter aX: ");
+int ay = ReadNumber("Enter aY: ");
+int bx = ReadNumber("Enter bX: ");
+int by = ReadNumber("Enter bY: ");
 
 Console.WriteLine(Math.Round(Distance(ax, ay, bx, by), 2));
