@@ -1,4 +1,5 @@
-﻿// 
+﻿// Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент,
+//второй и предпоследний и т.д. Результат запишите в новом массиве.
 
 int[] Massive(int size, int from, int to)
 {
@@ -20,15 +21,18 @@ void PrintMassiv(int[] array)
     Console.WriteLine();
 }
 
-int CountRange(int[] array)
+int[] PairsNum(int[] array)
 {
-    int count = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= 10 && array[i] <= 99)
-            count++;
-    }
-    return count;
+    int size = array.Length;
+    int flex_size = size / 2 + size % 2;
+    int [] new_array = new int [flex_size];
+
+    for (int i = 0; i < size / 2; i++)
+        new_array[i] = array[i] * array[size - i -1];
+
+    if (new_array[flex_size - 1] == 0)
+        new_array[flex_size - 1] = array[flex_size -1];
+    return new_array;
 }
 
 Console.WriteLine("Enter Massiv Length and Diapazon: ");
@@ -36,5 +40,5 @@ int[] array_a = Massive(int.Parse(Console.ReadLine()),
                         int.Parse(Console.ReadLine()),
                         int.Parse(Console.ReadLine()));
 PrintMassiv(array_a);
-Console.WriteLine("Numbers in diapazon 10-99: ");
-Console.WriteLine(CountRange(array_a));
+int[] array_a_new = PairsNum(array_a);
+PrintMassiv(array_a_new);
