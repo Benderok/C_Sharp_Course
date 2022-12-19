@@ -1,7 +1,7 @@
-﻿// 2. Задайте двумерный массив. Найдите элементы,
-//    у которых обе позиции чётные, и замените эти элементы на их квадраты.
+﻿// 1. Задайте двумерный массив. Напишите программу,
+//    которая поменяет местами первую и последнюю строку массива.
 
-void Print(int[,] arr)
+void Print(double[,] arr)
 {
     int row_size = arr.GetLength(0);
     int column_size = arr.GetLength(1);
@@ -16,26 +16,15 @@ void Print(int[,] arr)
 
 }
 
-int[,] MassNums(int row, int column, int from, int to)
+double[,] MassNums(int row, int column, int from, int to)
 {
-    int[,] arr = new int[row, column];
+    double[,] arr = new double[row, column];
 
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            arr[i, j] = new Random().Next(from, to);
+            arr[i, j] = Convert.ToDouble(new Random().Next(-100, 100)/10.0);
 
     return arr;
-}
-
-void Array2(int[,] arr)
-{
-    int row_size = arr.GetLength(0);
-    int column_size = arr.GetLength(1);
-
-    for (int i = 1; i < row_size; i += 2)
-
-        for (int j = 1; j < column_size; j += 2)
-            arr[i, j] *= arr[i, j];
 }
 
 Console.Write("Enter the number of rows: ");
@@ -43,9 +32,19 @@ int row = int.Parse(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
 int column = int.Parse(Console.ReadLine());
 
-int[,] arr_1 = MassNums(row, column,
+double[,] arr_1 = MassNums(row, column,
                         int.Parse(Console.ReadLine()),
                         int.Parse(Console.ReadLine()));
 Print(arr_1);
-Array2(arr_1);
+
+void NewStr(double[,] arr)
+{
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
+    for (int i=0; i<column; i++)
+        (arr[0, i], arr [row-1, i]) = (arr [row-1, i], arr [0, i]  );
+
+} 
+
+NewStr(arr_1);
 Print(arr_1);

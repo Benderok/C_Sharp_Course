@@ -1,4 +1,4 @@
-﻿// 
+﻿// Сумма диагонали массива.
 
 void Print(int[,] arr)
 {
@@ -33,14 +33,13 @@ int Summ(int[,] arr)
         sum += arr[i, i];
 
     return sum;
-    
 }
 
 Console.Write("Enter the number of rows: ");
 int row = int.Parse(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
 int column = int.Parse(Console.ReadLine());
-
+Console.WriteLine("Enter diapason: ");
 int[,] arr_1 = MassNums(row, column,
                         int.Parse(Console.ReadLine()),
                         int.Parse(Console.ReadLine()));
@@ -60,7 +59,5 @@ Console.WriteLine(Summ(arr_1));
 //             {
 //                 sum += arr[i, j];
 //             }
-                
-//     } 
-
+//     }
 //     return sum;

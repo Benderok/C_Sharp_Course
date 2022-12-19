@@ -1,5 +1,5 @@
 ﻿// Задайте двумерный массив размера m на n,
-// каждый элемент в массиве находится по формуле: Aₘₙ = m+n.
+// каждый элемент в массиве находится по формуле: A(m,n) = m+n.
 // Выведите полученный массив на экран.
 
 int[,] FillArray(int rows, int columns)
@@ -25,9 +25,9 @@ void PrintArray(int[,] arr)
 }
 
 Console.Write("Enter the number of rows: ");
-int row = int.Parse(Console.ReadLine()!);
+int row = int.Parse(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
-int column = int.Parse(Console.ReadLine()!);
+int column = int.Parse(Console.ReadLine());
 
 int[,] arr_1 = FillArray(row, column);
 
